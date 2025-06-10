@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>REAL ESTATE DASHBOARD</title>
+  <style>
+   html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 110vh;
+      width: 70%;
+    }
+
+    .nav-container {
+      width: 20%;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
+
+    .nav h1 {
+      margin-bottom: 20px;
+    }
+
+    .nav ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }q
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    iframe {
+      flex-grow: 1;
+      width: 175%;
+      border: none;
+    }
+
+    .button {
+      width: 50%;
+      padding: 15px;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      background-color: purple;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      border: solid;
+      border-color: bisque;
+      display: inline-block;
+      color: white;
+    }
+
+    img {
+      border: solid;
+      border-radius: 8px;
+      border-color: grey;
+      margin-left: 16px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav-container">
+      <nav class="nav">
+        <img src="{% static 'logo.jpg' %}" width="180" height="180"><br><br>
+        <ul>
+          <li><a href="{% url 'welcome' %}" target="main-frame" class="button">Home Page</a></li><br><br>
+          <li><a href="{% url 'buy' %}" target="main-frame" class="button">Buy Property</a></li><br><br> 
+          <li><a href="{% url 'sell' %}" target="main-frame" class="button">Sell Property</a></li><br><br>
+          <li><a href="{% url 'payment' %}" target="main-frame" class="button">Make Payment</a></li><br><br>
+          
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <iframe name="main-frame" src="{% url 'welcome' %}"></iframe>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+        }
+
+        aside {
+            background-color: #6e625e;
+            width: 15%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        aside img {
+            display: block;
+            margin: 0 auto 10px auto; /* Center logo and add spacing below */
+            width: 150px; /* Adjust the size of the logo */
+            height: auto;
+        }
+
+        aside h1 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 2px;
+        }
+
+        aside .button-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 100%;
+            padding: 20px;
+            color:black;
+            text-align:center;
+        }
+        
+       .why {
+            position: absolute;
+            bottom: 40px;
+            left: 30px;
+            color: white;
+            text-decoration: none;
+
+        }
+        
+     
+   
+        main {
+            flex-grow: 1;
+            background-image: url("{% static 'welcomebackgroundimage.jpg'%}"); /* Replace with your actual image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        main .welcome-message {
+            background: rgba(0, 0, 0, 0.6); /* Add semi-transparent background for readability */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+
+    <main>
+     
+        <div class="welcome-message">
+            <h2>Welcome to SR Real Estate</h2>
+            <p>Your one-stop solution for buying, selling, and managing properties. We are committed to providing the best service to meet your real estate needs. Explore our dashboard to get started!</p>
+        </div>
+    </main>
+</body>
+</html>

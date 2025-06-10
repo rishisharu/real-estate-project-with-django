@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Form</title>
+        <style>
+            body{
+                background-image: url("{% static 'loginbackgroundimage.jpg'%}");
+                background-size:cover;
+                margin:0;
+                padding:0;
+            }
+            .container{
+                top:50%;
+                left:50%;
+                position:absolute;
+                transform:translate(-50%,-50%);
+            }
+            .card{
+                padding:60px 40px 50px 40px;
+                background:black;
+                border-bottom:1px solid white;
+                border-radius:15px;
+                margin-left: 500px;
+                margin-top: 50px;
+                display: inline-block;
+            }
+            #name{
+                width:200px;
+                border:none;
+                background:transparent;
+                border-bottom:1px solid white;
+                padding:6px;
+                margin-bottom:20px;
+                color:white;
+            }
+            #button{
+                border-radius:20px;
+                padding:10px 20px;
+                background:dodgerblue;
+                color:white;
+                margin-top:20px;
+                border:none;
+                outline:none;
+                margin-left:50px;
+            }
+            a{
+                font-size:13px;
+            }
+            img{
+                border-radius:50%;
+                position:absolute;
+                margin-left:600px;
+                margin-top:10px;
+            }
+            #button:hover{
+                background-color: white;
+                color:black;
+                cursor:pointer;
+            }
+            #button{
+                margin-top:50px;
+            }
+            h1{
+                color: black;
+                margin-bottom: 60px;
+                font-size: 50px;
+            }
+            p{
+                color: black;
+                width: 500px;
+                padding: 30px;
+                font-size: 20px;
+            }
+            .word{
+                margin-right: 500px;
+                padding: 50px;
+            }
+            #fg{
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img src="{% static 'image2.jpg' %}" heigth="70" width="70">
+            <div class="card">
+                <form method="post" action="{% url 'dashboard' %}">
+                    {% csrf_token %}
+                    <input type="email" placeholder="Email" id="name" required><br>
+                    <input type="password" placeholder="Password" id="name" required><br>
+                    <a id="fg" href="{% url 'forgetpassword'%}">Forget Password?</a><br>
+                   
+                        <input type="submit" id="button">
+                    </a>
+                </form>
+            </div>
+        </div>
+        <div class="word">
+            <h1>Welcome!</h1>
+            <p>Welcome to S R Real Estates, Turning Dreams into Addresses. Based in the thriving cities of Jalgaon and Pune, we offer unmatched expertise in the real estate market. Whether you’re buying or selling residential or commercial properties, or seeking project financing, our team of professionals is dedicated to providing you with the best solutions.</p>
+        </div>
+    </body>
+</html>
